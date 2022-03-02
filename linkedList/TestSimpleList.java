@@ -35,11 +35,15 @@ public class TestSimpleList {
     	System.out.println("################ DeleteEnging");
     	initListBegin(li); 	
     	initListEnd(li);
+    	li.insertBefore(5,  99);
+    	li.insertBefore(4,  79);
     	System.out.println(li);
 		
     	while (! li.isEmpty()){
     		Object o=li.deleteEnding();
     		System.out.println(o+" :::::"+ li);
     	}
+    	
+    	System.out.println("################ End");
     }
 }
