@@ -127,8 +127,23 @@ public class SimpleList {
 	    *Method searches for the first parameter element and inserts the seconds parameter right before it. Return true if successful, else false.
 	    */
 	    public boolean insertBefore(Object element1, Object element2){    
-	    	//TODO the function
-	    	return true;
+	    	Node found = searchElement(element1);
+	    	if(found != null){
+	    		if(found == first) {
+	    			this.addBeginning(element2);
+	    		}
+	    		else {
+		    		Node n = first;
+		    		while(n.getNext().getElement() != element1) {
+		    			n = n.getNext();
+		    		}
+		    		Node insert = new SimpleNode(element2);
+		    		n.setNext(insert);
+		    		insert.setNext(found);
+	    		}
+	    		return true;
+	    	}
+	    	return false;
 	    }
 	    
 	    
